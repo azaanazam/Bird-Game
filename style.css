@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    background: url('images/background-img.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.bird {
+    height: 12vh; /* Changed to vh for responsiveness */
+    width: 16vw;  /* Changed to vw for responsiveness */
+    position: fixed;
+    top: 40vh;
+    left: 30vw;
+    z-index: 100;
+}
+
+.pipe_sprite {
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh;  /* Adjusted to vh for better scaling */
+    width: 10vw;   /* Adjusted to vw for responsiveness */
+    background: radial-gradient(lightgreen 50%, green);
+    border: 5px solid black;
+}
+
+.message {
+    position: absolute;
+    z-index: 10;
+    color: black;
+    top: 30%;
+    left: 50%;
+    font-size: 5vw; /* Updated to make the text size responsive */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px 40px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.message:hover {
+    background-color: #f0f0f0;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.messageStyle {
+    background: white;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5%;
+}
+
+.score {
+    position: fixed;
+    z-index: 10;
+    height: 10vh;
+    font-size: 8vh;  /* Adjusted font size for better scaling */
+    font-weight: 100;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.score_val {
+    color: gold;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1080px) {
+    .message {
+        font-size: 6vw; /* Increased responsiveness */
+        top: 50%;
+    }
+
+    .score {
+        font-size: 8vh;
+    }
+
+    .bird {
+        width: 20vw;  /* Adjusted bird size for smaller screens */
+        height: 15vh;  /* Adjusted bird height */
+    }
+
+    .pipe_sprite {
+        width: 14vw;  /* Adjusted pipe size */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .message {
+        font-size: 8vw; /* Larger font size on smaller devices */
+    }
+
+    .bird {
+        width: 25vw; /* Adjusted bird size for mobile */
+        height: 18vh; /* Adjusted bird height */
+    }
+
+    .pipe_sprite {
+        width: 18vw; /* Adjusted pipe size */
+    }
+
+    .score {
+        font-size: 6vh; /* Adjusted score size */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .message {
+        font-size: 10vw; /* Further adjustment for very small screens */
+    }
+
+    .bird {
+        width: 30vw;  /* Even smaller bird for mobile */
+        height: 20vh; /* Even smaller bird height */
+    }
+
+    .pipe_sprite {
+        width: 25vw;  /* Even smaller pipes for very small screens */
+    }
+
+    .score {
+        font-size: 5vh; /* Smaller score font size */
+    }
+}
